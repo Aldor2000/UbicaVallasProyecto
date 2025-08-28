@@ -1,0 +1,199 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f7f7f7;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Header */
+header {
+  background-color: #222;
+  color: white;
+  padding: 1rem;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.company-logo {
+  width: 50px;
+  height: auto;
+}
+
+.name-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.slogan-logo {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar a, .login-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: white;
+  background: #444;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.navbar a:hover, .login-button:hover {
+  background: #666;
+}
+
+/* Main content */
+.main-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* Filter bar */
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.filter-select {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sort-button {
+  background: #eee;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sort-button:hover {
+  background: #ddd;
+}
+
+/* Card */
+.card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+}
+
+.card-photo {
+  position: relative;
+}
+
+.card-img {
+  width: 100%;
+  display: block;
+}
+
+.card-status {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: crimson;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.card-header {
+  padding: 0.8rem 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card-content {
+  padding: 0 1rem 1rem;
+}
+
+.card-content-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 0.5rem;
+}
+
+.details-link {
+  color: dodgerblue;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.details-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer section */
+.menu-footer {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 2rem;
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+.footer-title {
+  margin-bottom: 0.5rem;
+}
+
+.footer-description {
+  margin-bottom: 1rem;
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-buttons a {
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: white;
+}
+
+.footer-button-map {
+  background: #28a745;
+}
+
+.footer-button-moreinfo {
+  background: #007bff;
+}
