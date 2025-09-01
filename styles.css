@@ -14,15 +14,19 @@ body {
 
 /* Header */
 header {
-  background-color: #222;
-  color: white;
+  background-color: white;
+  color: #222;
   padding: 1rem;
+  
+  
 }
 
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
+  
 }
 
 .logo-container {
@@ -32,8 +36,13 @@ header {
 }
 
 .company-logo {
-  width: 50px;
+  width: 35px;
   height: auto;
+  margin-right: -10px;
+}
+
+.company-name {
+  line-height: 1.5rem;
 }
 
 .name-logo {
@@ -43,7 +52,7 @@ header {
 
 .slogan-logo {
   font-size: 0.8rem;
-  color: #ccc;
+  color: rgb(27, 25, 25);
 }
 
 /* Navbar */
@@ -71,9 +80,10 @@ header {
 
 /* Main content */
 .main-container {
-  max-width: 90%;
+  width: 90%;
+  max-width: 1200px;
   margin: 2rem auto;
-  padding: 1rem;
+  
 }
 
 /* Filter bar */
@@ -125,66 +135,94 @@ header {
 }
 
 .billboards{
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  
   gap: 1rem;
-  justify-content: flex-start;
+  margin: 0 auto; 
 }
 
 /* Card */
 .card {
-  width: 300px;
-  flex: 0 0 auto;
+  height: 470px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   background: white;
   border-radius: 10px;
-  overflow: hidden;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  margin-bottom: 1.5rem;
+  
   
 
 }
 
 .card-photo {
+  margin-top: 1.2rem;
+  height: 45%;
   position: relative;
+  
 }
 
 .card-img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;      
+  object-fit: cover; 
 }
 
 .card-status {
   position: absolute;
   top: 10px;
-  left: 10px;
+  right: 10px;
   background: crimson;
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
 }
 
-.card-header {
-  padding: 0.8rem 1rem;
+.card-header{
+  height: 10%;
+  padding: 1.5rem;
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 600;
 }
 
-.card-content {
-  padding: 0 1rem 1rem;
+
+
+.card-content{
+  height: auto;
+  width: 100%;
+  display:grid;
+  gap:0.75rem;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  
 }
 
 .card-content-section {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-top: 0.5rem;
+  
+  
 }
 
+.space{
+  justify-content: space-between;
+}
+
+
+
 .details-link {
-  color: dodgerblue;
+  color: whitesmoke;
+  background-color: #005b9f;
   text-decoration: none;
   font-weight: bold;
+  width: 100%;
+  height: 36px;
+  border-radius: 5px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  gap:1rem;
 }
 
 .details-link:hover {
