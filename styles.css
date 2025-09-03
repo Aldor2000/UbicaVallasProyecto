@@ -23,7 +23,7 @@ header {
   height: auto;
   
 }
-.header-container{
+.header-section-1{
   position: relative;
   display: flex;
   align-items: center;
@@ -117,14 +117,24 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
+    
+    
   }
-  
-  .header-container {
+  .header-container{
     display: flex;
     justify-content: space-between;
     width: 90%;
     max-width: 1200px;
+    align-items: center;
+    
+  }
+  
+  .header-section-1 {
+    display: flex;
     padding:0.5rem 0;
+    width: auto;
+    height: 100%;
   }
 
   .slogan-logo{
@@ -134,18 +144,23 @@ header {
   .navbar-links {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 1rem;
     margin: 0;
+    padding: 0;;
     width: auto;
+    
   }
   .navbar-links a,
   .login-button {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    align-items: center;
     justify-content: center;
     gap: 5px;
     width: auto;
     margin: 0;
+    padding: 0.4rem;
     transition: transform 0.3s ease, background-color 0.3s ease;
   }
   
@@ -154,10 +169,6 @@ header {
   color: var(--main-bg-color);
   transform: scale(1.1);
 }
-
-  .login-button{
-    margin-left: 2rem;
-  }
 
   .hamburger {
     display: none;
