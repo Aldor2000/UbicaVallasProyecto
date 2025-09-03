@@ -20,7 +20,11 @@
             <p class="slogan-logo">Encuentra tu valla perfecta</p>
           </div>
         </div>
-        <nav class="navbar">
+        <!--Hamburguer button for phone screens-->
+        <button class="hamburger">☰</button>
+      </div>
+      <!--container for nav links-->
+        <nav class="navbar-links">
           <a class="home">
             <img class="home-icon" src="icons/home.png" alt="home icon" />
             <span>Home</span>
@@ -29,12 +33,17 @@
             <img class="map-icon" src="icons/map.png" alt="map icon" />
             <span>Map</span>
           </a>
+          <a class="list">
+            <img class="list-icon" src="icons/list.png" alt="list icon" />
+            <span>Billboards List</span>
+          </a>
           <button class="login-button">
             <img class="login-icon" src="icons/lock.png" alt="login icon" />
             Admin
           </button>
         </nav>
-      </div>
+
+      
     </header>
 
     <main>
@@ -368,10 +377,6 @@
                 </div>
               </div>
             </div>
-
-            
-
-            
           </section>
           <div class="menu-footer">
             <div class="footer-container">
@@ -392,5 +397,14 @@
         </div>
       </div>
     </main>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".navbar-links");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>
