@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapa — UbicaVallas</title>
+
+    <!-- Leaflet CSS for OpenStreetMap -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-sA+pqkjcUqkPmkjPiBt6FhHY2pB5fOnE1v+v+8Jr8ZE="
+      crossorigin=""
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="header-section-1">
+          <div class="logo-container">
+            <img class="company-logo" src="icons/map.png" alt="company logo" />
+            <div class="company-name">
+              <h1 class="name-logo">UbicaVallas</h1>
+              <p class="slogan-logo">Encuentra tu valla perfecta</p>
+            </div>
+          </div>
+          <!--Hamburguer button for phone screens-->
+          <button class="hamburger">☰</button>
+        </div>
+        <!--container for nav links-->
+        <nav class="navbar-links">
+          <a href="index.html" class="home">
+            <img class="home-icon" src="icons/home.png" alt="home icon" />
+            <span>Home</span>
+          </a>
+          <a href="map.html" class="map">
+            <img class="map-icon" src="icons/map.png" alt="map icon" />
+            <span>Map</span>
+          </a>
+          <a href="billboards.html" class="list">
+            <img class="list-icon" src="icons/list.png" alt="list icon" />
+            <span>Billboards List</span>
+          </a>
+          <button class="login-button">
+            <img class="login-icon" src="icons/lock.png" alt="login icon" />
+            Admin
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="main-container map-page">
+        <div class="title-section">
+          <h1>Interactive Map</h1>
+          <p>Explore our billboard locations on the interactive map</p>
+        </div>
+
+        <div class="filters">
+          <h2>Filters:</h2>
+          <div class="filter-group">
+            <label for="status-filter">Status:</label>
+            <select id="status-filter">
+              <option value="">All</option>
+              <option value="available">Available</option>
+              <option value="occupied">Occupied</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="size-filter">Size:</label>
+            <select id="size-filter">
+              <option value="">All</option>
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+            </select>
+          </div>
+        </div>
+        
+
+        <div class="map-and-info">
+          <div id="map" class="map-container">
+            <!-- Leaflet map will be rendered here -->
+          </div>
+          <div class="billboard-count">
+            <p id="billboard-count">Showing 0 of 0 billboards</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Leaflet JS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-vNtk6mZsMgVlu6Ppwup58NOGld7A9SlK4Jc1sZHZ+3s="
+      crossorigin=""
+    ></script>
+
+    <script src="map.js"></script>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".navbar-links");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
