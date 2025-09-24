@@ -20,7 +20,7 @@
 
 body {
   background-color: #f7f7f7;
-  color: #333;
+  color: #343a40;
   line-height: 1.5;
 }
 
@@ -64,6 +64,10 @@ header {
 }
 
 /* Navbar */
+header{
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
 .navbar-links {
   display: none;
   flex-direction: column;
@@ -323,9 +327,8 @@ header {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(0, 91, 159, 0.8), rgba(0, 91, 159, 0.9)), 
-              #005b9f url('images/hero-bg.jpg') center/cover no-repeat;
-  color: white;
+  background:  var(--light-color)/*var(--light-color)*/;
+  color: var(--dark-color);
   padding: 4rem 0;
   text-align: center;
   display: flex;
@@ -379,8 +382,8 @@ header {
 }
 
 .btn.primary {
-  background-color: white;
-  color: var(--main-bg-color);
+  background-color: var(--main-bg-color);
+  color: var(--light-color);
 }
 
 .btn.primary:hover {
@@ -425,7 +428,7 @@ header {
 /* Features Section */
 .features {
   padding: 5rem 0;
-  background-color: white;
+  background-color: var(--light-color);
 }
 
 .features h2 {
