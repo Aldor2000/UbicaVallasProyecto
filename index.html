@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>UbicaVallas - Home</title>
     <link rel="stylesheet" href="styles.css" />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -13,24 +13,33 @@
   <body>
     <header>
       <div class="header-container">
-        <div class="logo-container">
-          <img class="company-logo" src="icons\map.png" alt="company logo" />
-          <div class="company-name">
-            <h1 class="name-logo">UbicaVallas</h1>
-            <p class="slogan-logo">Encuentra tu valla perfecta</p>
+        <div class="header-section-1">
+          <div class="logo-container">
+            <img class="company-logo" src="icons/map.png" alt="company logo" />
+            <div class="company-name">
+              <h1 class="name-logo">UbicaVallas</h1>
+              <p class="slogan-logo">Encuentra tu valla perfecta</p>
+            </div>
           </div>
+          <!--Hamburguer button for phone screens-->
+          <button class="hamburger">☰</button>
         </div>
-        <nav class="navbar">
-          <a class="home">
-            <img class="home-icon" src="icons\home.png" alt="home icon" />
+        <!--container for nav links-->
+        <nav class="navbar-links">
+          <a href="index.html" class="home">
+            <img class="home-icon" src="icons/home.png" alt="home icon" />
             <span>Home</span>
           </a>
-          <a class="map">
-            <img class="map-icon" src="icons\map.png" alt="map icon" />
+          <a href="map.html" class="map">
+            <img class="map-icon" src="icons/map.png" alt="map icon" />
             <span>Map</span>
           </a>
+          <a href="billboards.html" class="list">
+            <img class="list-icon" src="icons/list.png" alt="list icon" />
+            <span>Billboards List</span>
+          </a>
           <button class="login-button">
-            <img class="login-icon" src="icons\lock.png" alt="login icon" />
+            <img class="login-icon" src="icons/lock.png" alt="login icon" />
             Admin
           </button>
         </nav>
@@ -38,351 +47,90 @@
     </header>
 
     <main>
-      <div class="main-container">
-        <div class="billboards-menu">
-          <div class="title-section">
-            <h1>All billboards</h1>
-            <p>Browse through our complete collection of billboard locations</p>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Encuentra la Ubicación Perfecta para tu Valla</h1>
+          <p>Descubre ubicaciones premium para vallas publicitarias con especificaciones técnicas detalladas, estado de disponibilidad y herramientas de mapeo interactivo para ayudarte a tomar decisiones publicitarias informadas.</p>
+          <div class="hero-buttons">
+            <a href="map.html" class="btn primary">Ver Mapa</a>
+            <a href="billboards.html" class="btn outline">Explorar Todas las Vallas</a>
           </div>
-          <div class="filter-bar">
-            <div class="filter-left">
-              <div class="filter-sort">
-                <img class="sort-icon" src="icons/sort.png" alt="sort icon" />
-                <span class="sort-text">Sort by:</span>
-              </div>
-              <div class="filter-select">
-                <button class="sort-button name-button">Name</button>
-                <button class="sort-button size-button">Size</button>
-                <button class="sort-button status-button">Status</button>
-                <button class="sort-button location-button">Location</button>
-              </div>
-            </div>
+        </div>
+      </section>
 
-            <div class="filter-total">
-              <p><span class="billboard-amount">6</span> Billboards Total</p>
+      <!-- Features Section -->
+      <section class="features">
+        <div class="container">
+          <h2>Todo lo que Necesitas para Encontrar la Valla Correcta</h2>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <img src="icons/map.png" alt="Interactive Map">
+              </div>
+              <h3>Mapa Interactivo</h3>
+              <p>Explora ubicaciones de vallas en un mapa interactivo con marcadores detallados e información de ubicación.</p>
             </div>
-          </div>
-          <section class="billboards">
-            <div class="card">
-              <div class="card-photo">
-                <img
-                  class="card-img"
-                  src="images\billboard.jpg"
-                  alt="billboard photo"
-                />
-                <div class="card-status">
-                  <span class="status-text">Occupied</span>
-                </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <img src="icons/details.png" alt="Detailed Specifications">
               </div>
-              <div class="card-header">
-                <p class="card-title">Av. Santos Dumont</p>
-              </div>
-              <div class="card-content">
-                <div class="card-content-section">
-                  <img
-                    class="icon-location"
-                    src="icons\map.png"
-                    alt="location icon"
-                  />
-                  <span class="location-direction"
-                    >Avenida Santo Dumont, 3er Anillo</span
-                  >
-                </div>
-                <div class="card-content-section">
-                  <div class="card-info">
-                    <span class="billboard-badge-size">Size:</span>
-                    <span class="billboard-size">Large</span>
-                  </div>
-                  <div class="card-info">
-                    <span class="billboard-mesure">10 m x 4 m</span>
-                  </div>
-                </div>
-                <div class="card-content-section">
-                  <span class="billboard-badge-material">Material:</span>
-                  <span class="billboard-material">Aluminio</span>
-                </div>
-                <div class="card-content-section">
-                  <a class="details-link">
-                    <img
-                      class="card-details-icon"
-                      src="icons\eye.png"
-                      alt="details icon"
-                    />
-                    <span class="details-text">View Details</span>
-                  </a>
-                </div>
-              </div>
+              <h3>Especificaciones Detalladas</h3>
+              <p>Ve detalles técnicos completos incluyendo dimensiones, materiales y estado de disponibilidad.</p>
             </div>
-
-            <div class="card">
-              <div class="card-photo">
-                <img
-                  class="card-img"
-                  src="images\billboard.jpg"
-                  alt="billboard photo"
-                />
-                <div class="card-status">
-                  <span class="status-text">Occupied</span>
-                </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <img src="icons/filter.png" alt="Smart Filtering">
               </div>
-              <div class="card-header">
-                <p class="card-title">Av. Santos Dumont</p>
-              </div>
-              <div class="card-content">
-                <div class="card-content-section">
-                  <img
-                    class="icon-location"
-                    src="icons\map.png"
-                    alt="location icon"
-                  />
-                  <span class="location-direction"
-                    >Avenida Santo Dumont, 3er Anillo</span
-                  >
-                </div>
-                <div class="card-content-section">
-                  <div class="card-info">
-                    <span class="billboard-badge-size">Size:</span>
-                    <span class="billboard-size">Large</span>
-                  </div>
-                  <div class="card-info">
-                    <span class="billboard-mesure">10 m x 4 m</span>
-                  </div>
-                </div>
-                <div class="card-content-section">
-                  <span class="billboard-badge-material">Material:</span>
-                  <span class="billboard-material">Aluminio</span>
-                </div>
-                <div class="card-content-section">
-                  <a class="details-link">
-                    <img
-                      class="card-details-icon"
-                      src="icons\eye.png"
-                      alt="details icon"
-                    />
-                    <span class="details-text">View Details</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-photo">
-                <img
-                  class="card-img"
-                  src="images\billboard.jpg"
-                  alt="billboard photo"
-                />
-                <div class="card-status">
-                  <span class="status-text">Occupied</span>
-                </div>
-              </div>
-              <div class="card-header">
-                <p class="card-title">Av. Santos Dumont</p>
-              </div>
-              <div class="card-content">
-                <div class="card-content-section">
-                  <img
-                    class="icon-location"
-                    src="icons\map.png"
-                    alt="location icon"
-                  />
-                  <span class="location-direction"
-                    >Avenida Santo Dumont, 3er Anillo</span
-                  >
-                </div>
-                <div class="card-content-section">
-                  <div class="card-info">
-                    <span class="billboard-badge-size">Size:</span>
-                    <span class="billboard-size">Large</span>
-                  </div>
-                  <div class="card-info">
-                    <span class="billboard-mesure">10 m x 4 m</span>
-                  </div>
-                </div>
-                <div class="card-content-section">
-                  <span class="billboard-badge-material">Material:</span>
-                  <span class="billboard-material">Aluminio</span>
-                </div>
-                <div class="card-content-section">
-                  <a class="details-link">
-                    <img
-                      class="card-details-icon"
-                      src="icons\eye.png"
-                      alt="details icon"
-                    />
-                    <span class="details-text">View Details</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-photo">
-                <img
-                  class="card-img"
-                  src="images\billboard.jpg"
-                  alt="billboard photo"
-                />
-                <div class="card-status">
-                  <span class="status-text">Occupied</span>
-                </div>
-              </div>
-              <div class="card-header">
-                <p class="card-title">Av. Santos Dumont</p>
-              </div>
-              <div class="card-content">
-                <div class="card-content-section">
-                  <img
-                    class="icon-location"
-                    src="icons\map.png"
-                    alt="location icon"
-                  />
-                  <span class="location-direction"
-                    >Avenida Santo Dumont, 3er Anillo</span
-                  >
-                </div>
-                <div class="card-content-section">
-                  <div class="card-info">
-                    <span class="billboard-badge-size">Size:</span>
-                    <span class="billboard-size">Large</span>
-                  </div>
-                  <div class="card-info">
-                    <span class="billboard-mesure">10 m x 4 m</span>
-                  </div>
-                </div>
-                <div class="card-content-section">
-                  <span class="billboard-badge-material">Material:</span>
-                  <span class="billboard-material">Aluminio</span>
-                </div>
-                <div class="card-content-section">
-                  <a class="details-link">
-                    <img
-                      class="card-details-icon"
-                      src="icons\eye.png"
-                      alt="details icon"
-                    />
-                    <span class="details-text">View Details</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-photo">
-                <img
-                  class="card-img"
-                  src="images\billboard.jpg"
-                  alt="billboard photo"
-                />
-                <div class="card-status">
-                  <span class="status-text">Occupied</span>
-                </div>
-              </div>
-              <div class="card-header">
-                <p class="card-title">Av. Santos Dumont</p>
-              </div>
-              <div class="card-content">
-                <div class="card-content-section">
-                  <img
-                    class="icon-location"
-                    src="icons\map.png"
-                    alt="location icon"
-                  />
-                  <span class="location-direction"
-                    >Avenida Santo Dumont, 3er Anillo</span
-                  >
-                </div>
-                <div class="card-content-section">
-                  <div class="card-info">
-                    <span class="billboard-badge-size">Size:</span>
-                    <span class="billboard-size">Large</span>
-                  </div>
-                  <div class="card-info">
-                    <span class="billboard-mesure">10 m x 4 m</span>
-                  </div>
-                </div>
-                <div class="card-content-section">
-                  <span class="billboard-badge-material">Material:</span>
-                  <span class="billboard-material">Aluminio</span>
-                </div>
-                <div class="card-content-section">
-                  <a class="details-link">
-                    <img
-                      class="card-details-icon"
-                      src="icons\eye.png"
-                      alt="details icon"
-                    />
-                    <span class="details-text">View Details</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-photo">
-                <img
-                  class="card-img"
-                  src="images\billboard.jpg"
-                  alt="billboard photo"
-                />
-                <div class="card-status">
-                  <span class="status-text">Occupied</span>
-                </div>
-              </div>
-              <div class="card-header">
-                <p class="card-title">Av. Santos Dumont</p>
-              </div>
-              <div class="card-content">
-                <div class="card-content-section">
-                  <img
-                    class="icon-location"
-                    src="icons\map.png"
-                    alt="location icon"
-                  />
-                  <span class="location-direction"
-                    >Avenida Santo Dumont, 3er Anillo</span
-                  >
-                </div>
-                <div class="card-content-section">
-                  <div class="card-info">
-                    <span class="billboard-badge-size">Size:</span>
-                    <span class="billboard-size">Large</span>
-                  </div>
-                  <div class="card-info">
-                    <span class="billboard-mesure">10 m x 4 m</span>
-                  </div>
-                </div>
-                <div class="card-content-section">
-                  <span class="billboard-badge-material">Material:</span>
-                  <span class="billboard-material">Aluminio</span>
-                </div>
-                <div class="card-content-section">
-                  <a class="details-link">
-                    <img
-                      class="card-details-icon"
-                      src="icons\eye.png"
-                      alt="details icon"
-                    />
-                    <span class="details-text">View Details</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
-          <div class="menu-footer">
-            <div class="footer-container">
-              <h2 class="footer-title">Need help finding a billboard?</h2>
-              <p class="footer-description">
-                Use our interactive map to explore locations or contact us for
-                personalized recommendations.
-              </p>
-              <div class="footer-buttons">
-                <a class="footer-button-map" href="">
-                  <img class="map-icon" src="icons\map.png" alt="map icon" />
-                  View on Map
-                </a>
-                <a class="footer-button-moreinfo"> Learn More </a>
-              </div>
+              <h3>Filtrado Inteligente</h3>
+              <p>Filtra vallas por tamaño, disponibilidad y ubicación para encontrar exactamente lo que necesitas.</p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="stats">
+        <div class="container stats-grid">
+          <div class="stat">
+            <div class="number">6+</div>
+            <div class="label">Ubicaciones de Vallas</div>
+          </div>
+          <div class="stat">
+            <div class="number">3</div>
+            <div class="label">Categorías de Tamaño</div>
+          </div>
+          <div class="stat">
+            <div class="number">100%</div>
+            <div class="label">Especificaciones Detalladas</div>
+          </div>
+          <div class="stat">
+            <div class="number">24/7</div>
+            <div class="label">Actualizaciones de Disponibilidad</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta">
+        <div class="container">
+          <h2>¿Listo para Encontrar tu Valla Perfecta?</h2>
+          <p>Comienza explorando nuestro mapa interactivo o navega por nuestro directorio completo de vallas.</p>
+          <div class="cta-buttons">
+            <a href="map.html" class="btn secondary">Explorar Mapa</a>
+            <a href="about.html" class="btn outline-light">Saber Más</a>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".navbar-links");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>
