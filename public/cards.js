@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
         detailsDiv.className = "card-content-section details";
         const detailsLink = document.createElement("a");
         detailsLink.className = "details-link";
-        detailsLink.href = `/billboard.html?id=${billboard.id}`;
+        detailsLink.href = `billboard-details.html?id=${billboard.id}`;
         detailsLink.innerHTML = `
           <img class="card-details-icon" src="icons/eye.png" alt="details icon"/>
           <span class="details-text">View Details</span>
