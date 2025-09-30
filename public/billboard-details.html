@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Billboard Details</title>
+    <link rel="stylesheet" href="billboard-details.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header>
+      <div class="header-container">
+        <div class="header-section-1">
+          <div class="logo-container">
+            <img class="company-logo" src="icons/map.png" alt="company logo" />
+            <div class="company-name">
+              <h1 class="name-logo">UbicaVallas</h1>
+              <p class="slogan-logo">Encuentra tu valla perfecta</p>
+            </div>
+          </div>
+          <button class="hamburger">☰</button>
+        </div>
+        <nav class="navbar-links">
+          <a href="index.html" class="home">
+            <img class="home-icon" src="icons/home.png" alt="home icon" />
+            <span>Home</span>
+          </a>
+          <a href="map.html" class="map">
+            <img class="map-icon" src="icons/map.png" alt="map icon" />
+            <span>Map</span>
+          </a>
+          <a href="billboards.html" class="list">
+            <img class="list-icon" src="icons/list.png" alt="list icon" />
+            <span>Billboards List</span>
+          </a>
+          <button class="login-button">
+            <img class="login-icon" src="icons/lock.png" alt="login icon" />
+            Admin
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+      <div class="main-container container">
+        <div class="left">
+          <div class="billboard-img">
+            <span class="status">Ocupada</span>
+          </div>
+          <div class="cards">
+            <div class="info-card">
+              Grande <br /><small>Categoría de Tamaño</small>
+            </div>
+            <div class="info-card">Digital LED <br /><small>Material</small></div>
+          </div>
+        </div>
+
+        <div class="right">
+          <h1>Valla Autopista 101</h1>
+          <p class="location">Autopista 101, Kilómetro 15</p>
+          <p class="price">$4,200/mes</p>
+
+          <section class="box">
+            <h2>Descripción</h2>
+            <p>
+              Ubicación de alto tráfico en autopista con capacidades de pantalla
+              digital.
+            </p>
+          </section>
+
+          <section class="box">
+            <h2>Especificaciones Técnicas</h2>
+            <ul>
+              <li><strong>Ancho:</strong> 48'</li>
+              <li><strong>Alto:</strong> 14'</li>
+              <li><strong>Material:</strong> Digital LED</li>
+              <li><strong>Área Total:</strong> 672 pies²</li>
+              <li>
+                <strong>Nivel de Tráfico:</strong>
+                <span class="badge">Alto</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="box unavailable">
+            <h2>Estado de Disponibilidad</h2>
+            <p>
+              <span class="icon">⚠️</span> Actualmente Ocupada<br />
+              Esta valla está siendo utilizada actualmente por otro anunciante
+            </p>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- MAP SECTION -->
+    <section class="map-section">
+      <h2>Vista Previa de Ubicación</h2>
+      <div class="map-placeholder">
+        <p>🗺️ Aquí va el mapa (placeholder)</p>
+      </div>
+      <div class="map-actions">
+        <button class="btn">Ver en Mapa Interactivo</button>
+        <button class="btn">Explorar Más Vallas</button>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <h2>¿Interesado en Esta Valla?</h2>
+      <p>
+        Contáctanos para saber más sobre disponibilidad, precios y opciones de
+        reserva.
+      </p>
+      <div class="cta-actions">
+        <button class="btn-light">Contactar Equipo de Ventas</button>
+        <button class="btn">Solicitar Cotización</button>
+      </div>
+    </section>
+
+    <script src="billboard-details.js"></script>
+
+  </body>
+</html>
