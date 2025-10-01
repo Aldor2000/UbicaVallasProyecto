@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
+    <!-- login modal -->
+    <link rel="stylesheet" href="loginStyles.css">
+
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
@@ -38,7 +41,7 @@
             <img class="list-icon" src="icons/list.png" alt="list icon" />
             <span>Billboards List</span>
           </a>
-          <button class="login-button">
+          <button id="adminBtn" class="login-button">
             <img class="login-icon" src="icons/lock.png" alt="login icon" />
             Admin
           </button>
@@ -399,6 +402,29 @@
       </div>
     </main>
 
+    <!-- Modal de Login -->
+  <div id="loginModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+      <form id="loginForm" autocomplete="off">
+        <h2 id="loginTitle">Acceso de Administrador</h2>
+        <p>Ingresa tu credencial de administrador para acceder a las funciones de edición.</p>
+
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" placeholder="Ingresa aquí el usuario" required>
+
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" placeholder="Ingresa aquí la contraseña" required>
+
+        <button type="submit" class="btn-primary">Iniciar Sesión</button>
+        <button type="button" class="btn-secondary" id="closeLogin">Cancelar</button>
+        <!-- Aquí se mostrará el mensaje de error si ocurre -->
+      </form>
+    </div>
+  </div>
+
+  <!-- Login script-->
+    <script src="loginScript.js"></script>
+    
     <script>
       const hamburger = document.querySelector(".hamburger");
       const navLinks = document.querySelector(".navbar-links");
@@ -407,5 +433,6 @@
         navLinks.classList.toggle("active");
       });
     </script>
+
   </body>
 </html>
