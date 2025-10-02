@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Billboard Details</title>
-    <link rel="stylesheet" href="billboard-details.css" />
+    <!--<link rel="stylesheet" href="billboard-details.css" />-->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -53,7 +53,9 @@
             <div class="info-card">
               Grande <br /><small>Categoría de Tamaño</small>
             </div>
-            <div class="info-card">Digital LED <br /><small>Material</small></div>
+            <div class="info-card">
+              Digital LED <br /><small>Material</small>
+            </div>
           </div>
         </div>
 
@@ -96,31 +98,38 @@
     </main>
 
     <!-- MAP SECTION -->
-    <section class="map-section">
-      <h2>Vista Previa de Ubicación</h2>
-      <div class="map-placeholder">
-        <p>🗺️ Aquí va el mapa (placeholder)</p>
-      </div>
-      <div class="map-actions">
-        <button class="btn">Ver en Mapa Interactivo</button>
-        <button class="btn">Explorar Más Vallas</button>
-      </div>
-    </section>
+    <div class="main-container">
+      <section class="map-section">
+        <h2>Vista Previa de Ubicación</h2>
+        <div class="map-placeholder">
+          <p>🗺️ Aquí va el mapa (placeholder)</p>
+        </div>
+        <div class="map-actions">
+          <button class="btn">Ver en Mapa Interactivo</button>
+          <button class="btn">Explorar Más Vallas</button>
+        </div>
+      </section>
+    </div>
 
     <!-- CTA -->
-    <section class="cta">
-      <h2>¿Interesado en Esta Valla?</h2>
-      <p>
-        Contáctanos para saber más sobre disponibilidad, precios y opciones de
-        reserva.
-      </p>
-      <div class="cta-actions">
-        <button class="btn-light">Contactar Equipo de Ventas</button>
-        <button class="btn">Solicitar Cotización</button>
-      </div>
-    </section>
+    <div class="main-container">
+      <section class="cta">
+        <h2>¿Interesado en Esta Valla?</h2>
+        <p>
+          Contáctanos para saber más sobre disponibilidad, precios y opciones de
+          reserva.
+        </p>
+        <div class="cta-actions">
+          <button class="btn-light">Contactar Equipo de Ventas</button>
+          <button class="btn">Solicitar Cotización</button>
+        </div>
+      </section>
+    </div>
 
+    <!--generates the details for the elements-->
     <script src="billboard-details.js"></script>
 
+    <!--Script para hamburguer-->
+    <script src="hamburguer.js"></script>
   </body>
 </html>
