@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const loginModal = document.getElementById('loginModal');
   const loginForm = document.getElementById('loginForm');
   const closeLogin = document.getElementById('closeLogin');
-  const mainTitle = document.getElementById('mainTitle');
 
   let isAdmin = false; // estado de sesión en memoria (no persistente)
 
@@ -31,8 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
       adminBtn.textContent = 'Cerrar Sesión';
       adminBtn.setAttribute('aria-pressed', 'true');
     } else {
-      adminBtn.textContent = 'Admin';
-      mainTitle.textContent = 'Catálogo de Departamentos';
+      adminBtn.innerHTML = '<img class="login-icon" src="icons/lock.png" alt="login icon" /> Admin';
       adminBtn.removeAttribute('aria-pressed');
     }
   }
