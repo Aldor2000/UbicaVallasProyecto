@@ -6,7 +6,7 @@
     <title>UbicaVallas - Billboards</title>
     <link rel="stylesheet" href="styles.css" />
     <!-- login modal -->
-    <link rel="stylesheet" href="loginStyles.css">
+    <link rel="stylesheet" href="loginStyles.css" />
 
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -59,17 +59,16 @@
           <div class="filter-bar">
             <div class="filter-left">
               <div class="filter-sort">
-              <img class="sort-icon" src="icons/sort.png" alt="sort icon" />
-              <span class="sort-text">Sort by:</span>
+                <img class="sort-icon" src="icons/sort.png" alt="sort icon" />
+                <span class="sort-text">Sort by:</span>
+              </div>
+              <div class="filter-select">
+                <button class="sort-button name-button">Name</button>
+                <button class="sort-button size-button">Size</button>
+                <button class="sort-button status-button">Status</button>
+                <button class="sort-button location-button">Location</button>
+              </div>
             </div>
-            <div class="filter-select">
-              <button class="sort-button name-button">Name</button>
-              <button class="sort-button size-button">Size</button>
-              <button class="sort-button status-button">Status</button>
-              <button class="sort-button location-button">Location</button>
-            </div>
-            </div>
-            
 
             <div class="filter-total">
               <p><span class="billboard-amount">6</span> Billboards Total</p>
@@ -77,8 +76,6 @@
           </div>
           <section class="billboards-list" id="billboards-list">
             <!-- Cards will be dynamically inserted here -->
-            
-            
           </section>
           <div class="menu-footer">
             <div class="footer-container">
@@ -89,10 +86,12 @@
               </p>
               <div class="footer-buttons">
                 <a class="footer-button-map" href="map.html">
-                  <img class="map-icon" src="icons\map.png" alt="map icon"  />
+                  <img class="map-icon" src="icons\map.png" alt="map icon" />
                   View on Map
                 </a>
-                <a class="footer-button-moreinfo" href="about.html"> Learn More </a>
+                <a class="footer-button-moreinfo" href="about.html">
+                  Learn More
+                </a>
               </div>
             </div>
           </div>
@@ -101,28 +100,48 @@
     </main>
 
     <!-- Modal de Login -->
-  <div id="loginModal" class="modal hidden" aria-hidden="true">
-    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
-      <form id="loginForm" autocomplete="off">
-        <h2 id="loginTitle">Acceso de Administrador</h2>
-        <p>Ingresa tu credencial de administrador para acceder a las funciones de edición.</p>
+    <div id="loginModal" class="modal hidden" aria-hidden="true">
+      <div
+        class="modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="loginTitle"
+      >
+        <form id="loginForm" autocomplete="off">
+          <h2 id="loginTitle">Acceso de Administrador</h2>
+          <p>
+            Ingresa tu credencial de administrador para acceder a las funciones
+            de edición.
+          </p>
 
-        <label for="usuario">Usuario</label>
-        <input type="text" id="usuario" placeholder="Ingresa aquí el usuario" required>
+          <label for="usuario">Usuario</label>
+          <input
+            type="text"
+            id="usuario"
+            placeholder="Ingresa aquí el usuario"
+            required
+          />
 
-        <label for="password">Contraseña</label>
-        <input type="password" id="password" placeholder="Ingresa aquí la contraseña" required>
+          <label for="password">Contraseña</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Ingresa aquí la contraseña"
+            required
+          />
 
-        <button type="submit" class="btn-primary">Iniciar Sesión</button>
-        <button type="button" class="btn-secondary" id="closeLogin">Cancelar</button>
-        <!-- Aquí se mostrará el mensaje de error si ocurre -->
-      </form>
+          <button type="submit" class="btn-primary">Iniciar Sesión</button>
+          <button type="button" class="btn-secondary" id="closeLogin">
+            Cancelar
+          </button>
+          <!-- Aquí se mostrará el mensaje de error si ocurre -->
+        </form>
+      </div>
     </div>
-  </div>
 
-  <!-- Login script-->
+    <!-- Login script-->
     <script src="loginScript.js"></script>
-    
+
     <script>
       const hamburger = document.querySelector(".hamburger");
       const navLinks = document.querySelector(".navbar-links");
@@ -131,6 +150,12 @@
         navLinks.classList.toggle("active");
       });
     </script>
+
+    
+
+    <!--Script para hamburguer-->
+    <script src="hamburguer.js"></script>
+    <!-- Cards script to dynamically load billboards-->
     <script src="cards.js"></script>
   </body>
 </html>

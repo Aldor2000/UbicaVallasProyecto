@@ -327,6 +327,125 @@ header{
   background: #007bff;
 }
 
+/* BILLBOARD-DETAILS SECTION */
+
+/* MAIN LAYOUT */
+.container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
+.left, .right {
+  flex: 1;
+}
+.billboard-img {
+  background: #eee;
+  height: 200px;
+  border-radius: 10px;
+  position: relative;
+}
+.status {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 5px;
+}
+.cards {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.info-card {
+  flex: 1;
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* RIGHT PANEL */
+h1 { margin: 0; }
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0066cc;
+}
+.box {
+  background: #fff;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+.box ul {
+  padding-left: 1rem;
+}
+.badge {
+  background: #0066cc;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+}
+.unavailable {
+  border-left: 4px solid red;
+}
+
+/* MAP DETAILS */
+.map-section {
+  margin: 2rem;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.map-placeholder {
+  background: #e6f2ff;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  border-radius: 10px;
+}
+.map-actions {
+  display: flex;
+  gap: 1rem;
+}
+.btn {
+  background: #0066cc;
+  color: white;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn-light {
+  background: #fff;
+  color: #0066cc;
+  border: 1px solid #0066cc;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* CTA */
+.cta {
+  background: #0066cc;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  
+}
+.cta-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
 
 /* INDEX SECTION */
 
