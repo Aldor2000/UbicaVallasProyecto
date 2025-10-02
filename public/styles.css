@@ -82,8 +82,7 @@ header{
   display: flex;
 }
 
-.navbar-links a,
-.login-button {
+.navbar-links a {
   display: flex;
   align-items: center;
   justify-content: left;
@@ -95,8 +94,6 @@ header{
   border-radius: 10px;
   
 }
-
-
 
 .login-button {
   display: flex;
