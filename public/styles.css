@@ -108,6 +108,14 @@ header{
   cursor: pointer;
   transition: var(--transition);
   font-weight: bold;
+  width: 100%;            /* hace que ocupe todo el ancho */
+  max-width: 480px;       /* o ponle más si lo quieres más largo */
+}
+
+.login-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
 }
 
 .login-button:hover {
