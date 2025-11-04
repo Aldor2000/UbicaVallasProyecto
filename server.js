@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Ruta a la base de datos (la crearemos después)
-const dbPath = path.join(__dirname, 'billboards.db');
+const dbPath = path.join(__dirname, process.env.DB_PATH || 'billboards.db');
 
 // Conectar a la base de datos
 const db = new sqlite3.Database(dbPath, (err) => {
