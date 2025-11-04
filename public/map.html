@@ -9,13 +9,11 @@
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-sA+pqkjcUqkPmkjPiBt6FhHY2pB5fOnE1v+v+8Jr8ZE="
-      crossorigin=""
     />
 
     <link rel="stylesheet" href="styles.css" />
     <!-- login modal -->
-    <link rel="stylesheet" href="loginStyles.css">
+    <link rel="stylesheet" href="loginStyles.css" />
 
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -85,7 +83,6 @@
             </select>
           </div>
         </div>
-        
 
         <div class="map-and-info">
           <div id="map" class="map-container">
@@ -98,41 +95,56 @@
       </div>
     </main>
 
-     <!-- Modal de Login -->
-  <div id="loginModal" class="modal hidden" aria-hidden="true">
-    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
-      <form id="loginForm" autocomplete="off">
-        <h2 id="loginTitle">Acceso de Administrador</h2>
-        <p>Ingresa tu credencial de administrador para acceder a las funciones de edición.</p>
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal hidden" aria-hidden="true">
+      <div
+        class="modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="loginTitle"
+      >
+        <form id="loginForm" autocomplete="off">
+          <h2 id="loginTitle">Acceso de Administrador</h2>
+          <p>
+            Ingresa tu credencial de administrador para acceder a las funciones
+            de edición.
+          </p>
 
-        <label for="usuario">Usuario</label>
-        <input type="text" id="usuario" placeholder="Ingresa aquí el usuario" required>
+          <label for="usuario">Usuario</label>
+          <input
+            type="text"
+            id="usuario"
+            placeholder="Ingresa aquí el usuario"
+            required
+          />
 
-        <label for="password">Contraseña</label>
-        <input type="password" id="password" placeholder="Ingresa aquí la contraseña" required>
+          <label for="password">Contraseña</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Ingresa aquí la contraseña"
+            required
+          />
 
-        <button type="submit" class="btn-primary">Iniciar Sesión</button>
-        <button type="button" class="btn-secondary" id="closeLogin">Cancelar</button>
-        <!-- Aquí se mostrará el mensaje de error si ocurre -->
-      </form>
+          <button type="submit" class="btn-primary">Iniciar Sesión</button>
+          <button type="button" class="btn-secondary" id="closeLogin">
+            Cancelar
+          </button>
+          <!-- Aquí se mostrará el mensaje de error si ocurre -->
+        </form>
+      </div>
     </div>
-  </div>
 
     <!-- Leaflet JS -->
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-vNtk6mZsMgVlu6Ppwup58NOGld7A9SlK4Jc1sZHZ+3s="
-      crossorigin=""
-    ></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
     <!-- Mapa script to load the map and the markers -->
     <script src="map.js"></script>
 
     <!--Script para hamburguer-->
     <script src="hamburguer.js"></script>
- 
 
     <!-- Login script-->
     <script src="loginScript.js"></script>
-
   </body>
 </html>

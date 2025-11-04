@@ -1,21 +1,58 @@
-// server.js
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
+const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Ruta a la base de datos (la crearemos después)
+// Ruta a la base de datos
 const dbPath = path.join(__dirname, process.env.DB_PATH || 'billboards.db');
 
-// Conectar a la base de datos
-const db = new sqlite3.Database(dbPath, (err) => {
-  if (err) {
-    console.error("❌ Error conectando a la base de datos:", err.message);
-  } else {
-    console.log("✅ Conectado a SQLite en:", dbPath);
+// Inicializar la base de datos si no existe
+const dbExists = fs.existsSync(dbPath);
+const db = new sqlite3.Database(dbPath);
+
+db.serialize(() => {
+  if (!dbExists) {
+    console.log('🗄️  Base de datos no encontrada. Creando nueva base de datos...');
   }
+
+  // Crear tabla billboards
+  db.run(`
+    CREATE TABLE IF NOT EXISTS billboards (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      location TEXT,
+      status TEXT,
+      size TEXT,
+      latitude REAL,
+      longitude REAL
+    )
+  `);
+
+  // Insertar datos de prueba si la tabla está vacía
+  db.get("SELECT COUNT(*) AS count FROM billboards", (err, row) => {
+    if (err) {
+      console.error('Error verificando la tabla billboards:', err.message);
+      return;
+    }
+    if (row.count === 0) {
+      console.log('🌟 Insertando datos de prueba en billboards...');
+      const stmt = db.prepare(`
+        INSERT INTO billboards (location, status, size, latitude, longitude)
+        VALUES (?, ?, ?, ?, ?)
+      `);
+
+      const sampleData = [
+        ['Billboard 1', 'available', 'large', -16.5, -68.1],
+        ['Billboard 2', 'occupied', 'medium', -16.6, -68.2],
+        ['Billboard 3', 'available', 'small', -16.55, -68.15],
+      ];
+
+      sampleData.forEach(item => stmt.run(item));
+      stmt.finalize();
+    }
+  });
 });
 
 // Servir archivos estáticos desde /public
@@ -23,37 +60,30 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Endpoint: obtener todas las vallas
 app.get('/api/billboards', (req, res) => {
-  const sql = "SELECT * FROM billboards";
-  db.all(sql, [], (err, rows) => {
-    if (err) {
-      res.status(500).json({ error: "Error al obtener datos" });
-    } else {
-      res.json(rows);
-    }
+  db.all("SELECT * FROM billboards", [], (err, rows) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json(rows);
   });
 });
 
-// Endpoint: obtener detalles de una valla
+// Endpoint: obtener billboard por id
 app.get('/api/billboards/:id', (req, res) => {
-  const sql = "SELECT * FROM billboards WHERE id = ?";
-  const id = req.params.id;
-  db.get(sql, [id], (err, row) => {
-    if (err) {
-      res.status(500).json({ error: "Error al obtener datos" });
-    } else if (!row) {
-      res.status(404).json({ error: "Billboard not found" });
-    } else {
-      res.json(row);
-    }
+  db.get("SELECT * FROM billboards WHERE id = ?", [req.params.id], (err, row) => {
+    if (err) return res.status(500).json({ error: err.message });
+    if (!row) return res.status(404).json({ error: "Billboard not found" });
+    res.json(row);
   });
 });
 
-// Endpoint para obtener billboards con filtros opcionales
+// Endpoint: obtener marcadores para Leaflet con filtros
 app.get('/api/billboards/locations', (req, res) => {
-  let sql = "SELECT id, location, status, size, latitude, longitude FROM billboards WHERE 1=1";
+  let sql = `
+    SELECT id, location, status, size, latitude, longitude
+    FROM billboards
+    WHERE latitude IS NOT NULL AND longitude IS NOT NULL
+  `;
   const params = [];
 
-  // Filtros opcionales
   if (req.query.status) {
     sql += " AND status = ?";
     params.push(req.query.status);
@@ -65,10 +95,10 @@ app.get('/api/billboards/locations', (req, res) => {
 
   db.all(sql, params, (err, rows) => {
     if (err) {
-      res.status(500).json({ error: "Error al obtener datos" });
-    } else {
-      res.json(rows);
+      console.error('Error en /api/billboards/locations:', err.message);
+      return res.status(500).json([]); // Siempre devuelve array
     }
+    res.json(rows); // rows siempre es un array
   });
 });
 
