@@ -48,6 +48,30 @@ app.get('/api/billboards/:id', (req, res) => {
   });
 });
 
+// Endpoint para obtener billboards con filtros opcionales
+app.get('/api/billboards/locations', (req, res) => {
+  let sql = "SELECT id, location, status, size, latitude, longitude FROM billboards WHERE 1=1";
+  const params = [];
+
+  // Filtros opcionales
+  if (req.query.status) {
+    sql += " AND status = ?";
+    params.push(req.query.status);
+  }
+  if (req.query.size) {
+    sql += " AND size = ?";
+    params.push(req.query.size);
+  }
+
+  db.all(sql, params, (err, rows) => {
+    if (err) {
+      res.status(500).json({ error: "Error al obtener datos" });
+    } else {
+      res.json(rows);
+    }
+  });
+});
+
 // Iniciar servidor
 app.listen(PORT, () => {
   console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
